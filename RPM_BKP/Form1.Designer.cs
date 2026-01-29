@@ -25,6 +25,8 @@
             this.btnExecutar = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.NomePC_User = new System.Windows.Forms.CheckBox();
+            this.exceptionJava = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnSelecionarPasta
@@ -51,6 +53,7 @@
             this.chkExportarChromeEdge.Size = new System.Drawing.Size(194, 24);
             this.chkExportarChromeEdge.TabIndex = 2;
             this.chkExportarChromeEdge.Text = "Exportar Favoritos Chrome e Edge";
+            this.chkExportarChromeEdge.CheckedChanged += new System.EventHandler(this.chkExportarChromeEdge_CheckedChanged);
             // 
             // chkExportarFirefox
             // 
@@ -59,6 +62,7 @@
             this.chkExportarFirefox.Size = new System.Drawing.Size(185, 24);
             this.chkExportarFirefox.TabIndex = 3;
             this.chkExportarFirefox.Text = "Exportar Favoritos Firefox";
+            this.chkExportarFirefox.CheckedChanged += new System.EventHandler(this.chkExportarFirefox_CheckedChanged);
             // 
             // chkGerarListaProgramas
             // 
@@ -67,6 +71,7 @@
             this.chkGerarListaProgramas.Size = new System.Drawing.Size(168, 24);
             this.chkGerarListaProgramas.TabIndex = 4;
             this.chkGerarListaProgramas.Text = "Gerar lista de Programas";
+            this.chkGerarListaProgramas.CheckedChanged += new System.EventHandler(this.chkGerarListaProgramas_CheckedChanged);
             // 
             // chkGerarListaImpressoras
             // 
@@ -75,6 +80,7 @@
             this.chkGerarListaImpressoras.Size = new System.Drawing.Size(168, 24);
             this.chkGerarListaImpressoras.TabIndex = 5;
             this.chkGerarListaImpressoras.Text = "Gerar lista de Impressoras";
+            this.chkGerarListaImpressoras.CheckedChanged += new System.EventHandler(this.chkGerarListaImpressoras_CheckedChanged);
             // 
             // chkListarCertificados
             // 
@@ -83,6 +89,7 @@
             this.chkListarCertificados.Size = new System.Drawing.Size(168, 24);
             this.chkListarCertificados.TabIndex = 6;
             this.chkListarCertificados.Text = "Listar Certificados";
+            this.chkListarCertificados.CheckedChanged += new System.EventHandler(this.chkListarCertificados_CheckedChanged);
             // 
             // chkSalvarSerialWindows
             // 
@@ -91,6 +98,7 @@
             this.chkSalvarSerialWindows.Size = new System.Drawing.Size(144, 24);
             this.chkSalvarSerialWindows.TabIndex = 7;
             this.chkSalvarSerialWindows.Text = "Salvar Serial Windows";
+            this.chkSalvarSerialWindows.CheckedChanged += new System.EventHandler(this.chkSalvarSerialWindows_CheckedChanged);
             // 
             // chkVerificarIPFixo
             // 
@@ -99,10 +107,11 @@
             this.chkVerificarIPFixo.Size = new System.Drawing.Size(144, 24);
             this.chkVerificarIPFixo.TabIndex = 8;
             this.chkVerificarIPFixo.Text = "Verificar IP Fixo";
+            this.chkVerificarIPFixo.CheckedChanged += new System.EventHandler(this.chkVerificarIPFixo_CheckedChanged);
             // 
             // btnExecutar
             // 
-            this.btnExecutar.Location = new System.Drawing.Point(118, 260);
+            this.btnExecutar.Location = new System.Drawing.Point(115, 312);
             this.btnExecutar.Name = "btnExecutar";
             this.btnExecutar.Size = new System.Drawing.Size(138, 23);
             this.btnExecutar.TabIndex = 9;
@@ -111,10 +120,11 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(27, 298);
+            this.progressBar.Location = new System.Drawing.Point(27, 341);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(320, 23);
             this.progressBar.TabIndex = 10;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // lblStatus
             // 
@@ -123,9 +133,29 @@
             this.lblStatus.Size = new System.Drawing.Size(320, 13);
             this.lblStatus.TabIndex = 11;
             // 
+            // NomePC_User
+            // 
+            this.NomePC_User.Location = new System.Drawing.Point(37, 246);
+            this.NomePC_User.Name = "NomePC_User";
+            this.NomePC_User.Size = new System.Drawing.Size(185, 24);
+            this.NomePC_User.TabIndex = 12;
+            this.NomePC_User.Text = "Salvar Nome de Usuário e PC";
+            this.NomePC_User.CheckedChanged += new System.EventHandler(this.NomePC_User_CheckedChanged);
+            // 
+            // exceptionJava
+            // 
+            this.exceptionJava.Location = new System.Drawing.Point(37, 270);
+            this.exceptionJava.Name = "exceptionJava";
+            this.exceptionJava.Size = new System.Drawing.Size(168, 24);
+            this.exceptionJava.TabIndex = 13;
+            this.exceptionJava.Text = "Salvar Sites Exceções Java";
+            this.exceptionJava.CheckedChanged += new System.EventHandler(this.exceptionJava_CheckedChanged);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(384, 355);
+            this.ClientSize = new System.Drawing.Size(384, 386);
+            this.Controls.Add(this.exceptionJava);
+            this.Controls.Add(this.NomePC_User);
             this.Controls.Add(this.btnSelecionarPasta);
             this.Controls.Add(this.txtCaminhoPasta);
             this.Controls.Add(this.chkExportarChromeEdge);
@@ -160,5 +190,7 @@
         private System.Windows.Forms.Button btnExecutar;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox NomePC_User;
+        private System.Windows.Forms.CheckBox exceptionJava;
     }
 }

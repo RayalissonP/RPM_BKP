@@ -4,6 +4,8 @@ using System.Text;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.Sqlite;
+
 
 namespace RPM_BKP
 {
@@ -49,6 +51,12 @@ namespace RPM_BKP
                 {
                     AtualizarStatus("Exportando favoritos do Chrome e Edge...");
                     await ExportarChromeEdge();
+                }
+
+                if (chkExportarFirefox.Checked)
+                {
+                    AtualizarStatus("Exportando favoritos do Firefox...");
+                    await ExportarFirefox();
                 }
 
                 lblStatus.Text = "Concluído!";
@@ -103,10 +111,8 @@ namespace RPM_BKP
             }
         }
 
-        // =========================================================
         // =============== EXPORTAR CHROME E EDGE ==================
-        // =========================================================
-
+  
         private async Task ExportarChromeEdge()
         {
             await Task.Run(() =>
@@ -114,37 +120,30 @@ namespace RPM_BKP
                 string destino = txtCaminhoPasta.Text;
 
                 ExportarNavegador(
-                    Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        @"Google\Chrome\User Data"),
-                    Path.Combine(destino, "Favoritos_Chrome.html"),
-                    "Google Chrome"
+                Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    @"Google\Chrome\User Data"),
+                destino,
+                "Chrome"
                 );
 
                 ExportarNavegador(
-                    Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        @"Microsoft\Edge\User Data"),
-                    Path.Combine(destino, "Favoritos_Edge.html"),
-                    "Microsoft Edge"
+                Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    @"Microsoft\Edge\User Data"),
+                destino,
+                "Edge"
                 );
+
             });
 
             progressBar.Invoke((MethodInvoker)(() => progressBar.Value++));
         }
 
-        private void ExportarNavegador(string pastaUserData, string arquivoSaida, string nomeNavegador)
+        private void ExportarNavegador(string pastaUserData, string pastaDestino, string nomeNavegador)
         {
             if (!Directory.Exists(pastaUserData))
                 return;
-
-            StringBuilder html = new StringBuilder();
-
-            html.AppendLine("<!DOCTYPE NETSCAPE-Bookmark-file-1>");
-            html.AppendLine("<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\">");
-            html.AppendLine("<TITLE>Bookmarks</TITLE>");
-            html.AppendLine("<H1>Bookmarks</H1>");
-            html.AppendLine("<DL><p>");
 
             foreach (string perfil in Directory.GetDirectories(pastaUserData))
             {
@@ -153,8 +152,19 @@ namespace RPM_BKP
                     continue;
 
                 string nomePerfil = Path.GetFileName(perfil);
+                string arquivoSaida = Path.Combine(
+                    pastaDestino,
+                    $"Favoritos_{nomeNavegador}_{nomePerfil}.html"
+                        .Replace(" ", "_")
+                );
 
-                html.AppendLine($"<DT><H3>{nomeNavegador} - {nomePerfil}</H3>");
+                StringBuilder html = new StringBuilder();
+
+                html.AppendLine("<!DOCTYPE NETSCAPE-Bookmark-file-1>");
+                html.AppendLine("<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\">");
+                html.AppendLine("<TITLE>Bookmarks</TITLE>");
+                html.AppendLine("<H1>Bookmarks</H1>");
+                html.AppendLine($"<H2>{nomeNavegador} - Perfil: {nomePerfil}</H2>");
                 html.AppendLine("<DL><p>");
 
                 JObject json = JObject.Parse(File.ReadAllText(bookmarksPath));
@@ -170,12 +180,109 @@ namespace RPM_BKP
                 }
 
                 html.AppendLine("</DL><p>");
+
+                File.WriteAllText(arquivoSaida, html.ToString(), Encoding.UTF8);
+            }
+        }
+
+        // Exportar Favoritos - Firefox
+        private async Task ExportarFirefox()
+        {
+            await Task.Run(() =>
+            {
+                string pastaPerfis = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    @"Mozilla\Firefox\Profiles"
+                );
+
+                if (!Directory.Exists(pastaPerfis))
+                    return;
+
+                string destino = txtCaminhoPasta.Text;
+
+                foreach (string perfil in Directory.GetDirectories(pastaPerfis))
+                {
+                    string placesPath = Path.Combine(perfil, "places.sqlite");
+                    if (!File.Exists(placesPath))
+                        continue;
+
+                    string nomePerfil = Path.GetFileName(perfil);
+                    string arquivoSaida = Path.Combine(
+                        destino,
+                        $"Favoritos_Firefox_{nomePerfil}.html".Replace(" ", "_")
+                    );
+
+                    ExportarPerfilFirefox(placesPath, arquivoSaida, nomePerfil);
+                }
+            });
+
+            progressBar.Invoke((MethodInvoker)(() => progressBar.Value++));
+        }
+
+        private void ExportarPerfilFirefox(string placesOriginal, string arquivoSaida, string nomePerfil)
+        {
+            string tempDb = Path.Combine(
+                Path.GetTempPath(),
+                Guid.NewGuid().ToString() + ".sqlite"
+            );
+
+            File.Copy(placesOriginal, tempDb, true);
+
+            StringBuilder html = new StringBuilder();
+
+            html.AppendLine("<!DOCTYPE NETSCAPE-Bookmark-file-1>");
+            html.AppendLine("<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\">");
+            html.AppendLine("<TITLE>Bookmarks</TITLE>");
+            html.AppendLine("<H1>Bookmarks</H1>");
+            html.AppendLine($"<H2>Firefox - Perfil: {nomePerfil}</H2>");
+            html.AppendLine("<DL><p>");
+
+            using (var conn = new SqliteConnection($"Data Source={tempDb};Mode=ReadOnly"))
+            {
+                conn.Open();
+
+                string sql = @"
+            SELECT b.id, b.title, p.url
+            FROM moz_bookmarks b
+            LEFT JOIN moz_places p ON b.fk = p.id
+            WHERE b.type = 1
+            ORDER BY b.parent, b.position
+        ";
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string titulo = reader["title"]?.ToString();
+                            string url = reader["url"]?.ToString();
+
+                            if (!string.IsNullOrEmpty(url))
+                            {
+                                html.AppendLine($"<DT><A HREF=\"{url}\">{titulo}</A>");
+                            }
+                        }
+                    }
+                }
             }
 
             html.AppendLine("</DL><p>");
 
             File.WriteAllText(arquivoSaida, html.ToString(), Encoding.UTF8);
+            try
+            {
+                File.Delete(tempDb);
+            }
+            catch
+            {
+                // se quiser, pode logar, mas não quebra o processo
+            }
         }
+
+        // Fim Exportar Favoritos - Firefox
 
         private void ProcessarItens(JToken itens, StringBuilder html)
         {
@@ -218,6 +325,56 @@ namespace RPM_BKP
                     txtCaminhoPasta.Text = dialog.SelectedPath;
                 }
             }
+        }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkExportarChromeEdge_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkExportarFirefox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkGerarListaProgramas_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkGerarListaImpressoras_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkListarCertificados_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkSalvarSerialWindows_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkVerificarIPFixo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NomePC_User_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exceptionJava_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
