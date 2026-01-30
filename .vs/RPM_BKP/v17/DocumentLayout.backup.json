@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|c:\\users\\rayalisson pastor\\source\\repos\\rpm_bkp\\rpm_bkp\\scripts\\impressorasexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\scripts\\impressorasexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -18,29 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImpressorasExporter.cs",
+              "DocumentMoniker": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\ImpressorasExporter.cs",
+              "RelativeDocumentMoniker": "RPM_BKP\\Scripts\\ImpressorasExporter.cs",
+              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\ImpressorasExporter.cs",
+              "RelativeToolTip": "RPM_BKP\\Scripts\\ImpressorasExporter.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T04:43:30.896Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs",
               "RelativeDocumentMoniker": "RPM_BKP\\Form1.cs",
-              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs*",
-              "RelativeToolTip": "RPM_BKP\\Form1.cs*",
-              "ViewState": "AgIAAAUBAAAAAAAAAAAUwCABAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs",
+              "RelativeToolTip": "RPM_BKP\\Form1.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAwwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T02:08:38.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs",
               "RelativeDocumentMoniker": "RPM_BKP\\Form1.cs",
-              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs [Design]*",
-              "RelativeToolTip": "RPM_BKP\\Form1.cs [Design]*",
+              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs [Design]",
+              "RelativeToolTip": "RPM_BKP\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T02:06:10.658Z",
               "EditorCaption": " [Design]"

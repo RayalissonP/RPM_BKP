@@ -35,7 +35,7 @@
             this.btnSelecionarPasta.Name = "btnSelecionarPasta";
             this.btnSelecionarPasta.Size = new System.Drawing.Size(180, 23);
             this.btnSelecionarPasta.TabIndex = 0;
-            this.btnSelecionarPasta.Text = "Selecionar pasta";
+            this.btnSelecionarPasta.Text = "Selecionar a Pasta de Destino";
             this.btnSelecionarPasta.Click += new System.EventHandler(this.btnSelecionarPasta_Click);
             // 
             // txtCaminhoPasta
@@ -128,9 +128,9 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(27, 373);
+            this.lblStatus.Location = new System.Drawing.Point(26, 373);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(320, 13);
+            this.lblStatus.Size = new System.Drawing.Size(330, 13);
             this.lblStatus.TabIndex = 11;
             // 
             // NomePC_User
@@ -153,7 +153,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(384, 395);
+            this.ClientSize = new System.Drawing.Size(384, 400);
             this.Controls.Add(this.exceptionJava);
             this.Controls.Add(this.NomePC_User);
             this.Controls.Add(this.btnSelecionarPasta);
