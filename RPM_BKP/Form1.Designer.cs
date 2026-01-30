@@ -43,7 +43,7 @@
             this.txtCaminhoPasta.Location = new System.Drawing.Point(27, 49);
             this.txtCaminhoPasta.Name = "txtCaminhoPasta";
             this.txtCaminhoPasta.ReadOnly = true;
-            this.txtCaminhoPasta.Size = new System.Drawing.Size(320, 20);
+            this.txtCaminhoPasta.Size = new System.Drawing.Size(329, 20);
             this.txtCaminhoPasta.TabIndex = 1;
             // 
             // chkExportarChromeEdge
@@ -111,24 +111,24 @@
             // 
             // btnExecutar
             // 
-            this.btnExecutar.Location = new System.Drawing.Point(115, 312);
+            this.btnExecutar.Location = new System.Drawing.Point(111, 310);
             this.btnExecutar.Name = "btnExecutar";
-            this.btnExecutar.Size = new System.Drawing.Size(138, 23);
+            this.btnExecutar.Size = new System.Drawing.Size(149, 25);
             this.btnExecutar.TabIndex = 9;
             this.btnExecutar.Text = "Executar";
             this.btnExecutar.Click += new System.EventHandler(this.btnExecutar_Click);
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(27, 341);
+            this.progressBar.Location = new System.Drawing.Point(27, 347);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(320, 23);
+            this.progressBar.Size = new System.Drawing.Size(329, 23);
             this.progressBar.TabIndex = 10;
             this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(27, 325);
+            this.lblStatus.Location = new System.Drawing.Point(27, 373);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(320, 13);
             this.lblStatus.TabIndex = 11;
@@ -153,7 +153,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(384, 386);
+            this.ClientSize = new System.Drawing.Size(384, 395);
             this.Controls.Add(this.exceptionJava);
             this.Controls.Add(this.NomePC_User);
             this.Controls.Add(this.btnSelecionarPasta);
