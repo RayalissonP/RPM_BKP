@@ -18,6 +18,7 @@ namespace RPM_BKP
             InitializeComponent();
         }
 
+        
         private void btnSelecionarPasta_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -39,34 +40,21 @@ namespace RPM_BKP
                 !chkGerarListaImpressoras.Checked &&
                 !chkListarCertificados.Checked &&
                 !chkSalvarSerialWindows.Checked &&
-                !chkVerificarIPFixo.Checked)
+                !chkVerificarIPFixo.Checked &&
+                !NomePC_User.Checked &&
+                !exceptionJava.Checked)
             {
                 MessageBox.Show("Nenhuma ação foi selecionada!", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtCaminhoPasta.Text))
+            if (string.IsNullOrWhiteSpace(txtCaminhoPasta.Text))
             {
                 MessageBox.Show("Selecione uma pasta de destino!", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            if (chkGerarListaProgramas.Checked)
-            {
-                AtualizarStatus("Gerando lista de programas instalados...");
-                await Task.Run(() => ProgramasExporter.Exportar(txtCaminhoPasta.Text));
-                progressBar.Value++;
-            }
-
-            if (chkGerarListaImpressoras.Checked)
-            {
-                AtualizarStatus("Gerando lista de impressoras...");
-                ImpressorasExporter.Exportar(txtCaminhoPasta.Text);
-                progressBar.Value++;
-            }
-
 
             BloquearInterface(true);
 
@@ -91,13 +79,62 @@ namespace RPM_BKP
                     progressBar.Value++;
                 }
 
+                if (chkGerarListaProgramas.Checked)
+                {
+                    AtualizarStatus("Gerando lista de programas instalados...");
+                    await Task.Run(() => ProgramasExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (chkGerarListaImpressoras.Checked)
+                {
+                    AtualizarStatus("Gerando lista de impressoras...");
+                    await Task.Run(() => ImpressorasExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (chkListarCertificados.Checked)
+                {
+                    AtualizarStatus("Listando certificados instalados...");
+                    await Task.Run(() => CertificadosExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (chkSalvarSerialWindows.Checked)
+                {
+                    AtualizarStatus("Gerando relatório de licença do Windows...");
+                    await Task.Run(() => WindowsLicenseExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (chkVerificarIPFixo.Checked)
+                {
+                    AtualizarStatus("Verificando configuração de IP fixo...");
+                    await Task.Run(() => IPFixoExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (NomePC_User.Checked)
+                {
+                    AtualizarStatus("Salvando Nome do PC e Usuário...");
+                    await Task.Run(() => NomePCUserExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
+                if (exceptionJava.Checked)
+                {
+                    AtualizarStatus("Salvando exceções de sites do Java...");
+                    await Task.Run(() => JavaExceptionExporter.Exportar(txtCaminhoPasta.Text));
+                    progressBar.Value++;
+                }
+
                 lblStatus.Text = "Concluído!";
-                MessageBox.Show("Processo finalizado com sucesso!",
+                MessageBox.Show(this, "Processo finalizado com sucesso!",
                     "Concluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro: {ex.Message}", "Erro",
+                MessageBox.Show(this, $"Erro: {ex.Message}", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -116,6 +153,11 @@ namespace RPM_BKP
             if (chkListarCertificados.Checked) total++;
             if (chkSalvarSerialWindows.Checked) total++;
             if (chkVerificarIPFixo.Checked) total++;
+            if (NomePC_User.Checked) total++;
+            if (exceptionJava.Checked) total++;
+            {
+                
+            }
             return total;
         }
 
@@ -129,6 +171,8 @@ namespace RPM_BKP
         {
             btnExecutar.Enabled = !bloquear;
             btnSelecionarPasta.Enabled = !bloquear;
+            btnLimpar.Enabled = !bloquear;
+            btnSelecTodos.Enabled = !bloquear;
 
             foreach (Control c in Controls)
             {
@@ -192,5 +236,32 @@ namespace RPM_BKP
         {
 
         }
+
+        private void btnSelecTodos_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Controls)
+            {
+                if (c is CheckBox chk)
+                {
+                    chk.Checked = true;
+                }
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Controls)
+            {
+                if (c is CheckBox chk)
+                {
+                    chk.Checked = false;
+                }
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+ 
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.props" Condition="Exists('..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.props')" />
+  <Import Project="..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.props" Condition="Exists('..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,20 +56,28 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.Cryptography, Version=10.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Cryptography.10.0.2\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Data.Sqlite, Version=10.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.Core.10.0.2\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SQLitePCLRaw.batteries_v2, Version=3.0.2.2801, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCLRaw.config.e_sqlite3.3.0.2\lib\net471\SQLitePCLRaw.batteries_v2.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCLRaw.core, Version=3.0.2.2801, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCLRaw.core.3.0.2\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
     </Reference>
-    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.11.2622, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.11\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=3.0.2.2801, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.3.0.2\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=3.0.2.2801, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.3.0.2\lib\net471\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
@@ -79,6 +87,10 @@
       <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Formats.Asn1, Version=10.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.10.0.2\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
@@ -90,6 +102,10 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +115,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -110,10 +127,15 @@
     <Compile Include="Models\BookmarkItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\CertificadosExporter.cs" />
     <Compile Include="Scripts\ChromeEdgeExporter.cs" />
     <Compile Include="Scripts\FirefoxExporter.cs" />
     <Compile Include="Scripts\ImpressorasExporter.cs" />
+    <Compile Include="Scripts\IPFixoExporter.cs" />
+    <Compile Include="Scripts\JavaExceptionExporter.cs" />
     <Compile Include="Scripts\ProgramasExporter.cs" />
+    <Compile Include="Scripts\NomePCUserExporter.cs" />
+    <Compile Include="Scripts\WindowsLicenseExporter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,8 +168,10 @@
     <PropertyGroup>
       <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.props'))" />
-    <Error Condition="!Exists('..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.targets'))" />
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
+    <Error Condition="!Exists('..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.props'))" />
+    <Error Condition="!Exists('..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.targets'))" />
   </Target>
-  <Import Project="..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.targets" Condition="Exists('..\packages\SourceGear.sqlite3.3.50.4.2\build\net471\SourceGear.sqlite3.targets')" />
+  <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
+  <Import Project="..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.targets" Condition="Exists('..\packages\SourceGear.sqlite3.3.50.4.5\build\net471\SourceGear.sqlite3.targets')" />
 </Project>

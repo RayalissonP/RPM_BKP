@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace RPM_BKP.Scripts
 {
@@ -52,11 +53,14 @@ namespace RPM_BKP.Scripts
 
             html.AppendLine("</table></body></html>");
 
-            File.WriteAllText(Path.Combine(pastaDestino, "ProgramasInstalados.html"),
-                html.ToString(), Encoding.UTF8);
+            string arquivoSaida = Path.Combine(pastaDestino, "Programas_Instalados.html");
+            File.WriteAllText(arquivoSaida, html.ToString(), Encoding.UTF8);
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = arquivoSaida,
+                UseShellExecute = true
+            });
         }
-
-        // =========================================================
 
         private static List<Programa> LerProgramasInstalados()
         {
@@ -110,8 +114,6 @@ namespace RPM_BKP.Scripts
 
             return lista;
         }
-
-        // =========================================================
 
         private static void SalvarIcone(Programa p, string destino)
         {
@@ -170,8 +172,6 @@ namespace RPM_BKP.Scripts
             }
         }
 
-        // =========================================================
-
         private static string LimparCaminho(string valor)
         {
             if (string.IsNullOrEmpty(valor)) return null;
@@ -207,7 +207,7 @@ namespace RPM_BKP.Scripts
 
         // =========================================================
 
-        private class Programa
+     private class Programa
         {
             public string Nome;
             public string Editor;

@@ -27,3 +27,10 @@ C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.cs
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.exe
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.pdb
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.exe.config
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\System.Formats.Asn1.dll
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\System.Security.Principal.Windows.dll
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\System.Formats.Asn1.xml
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\System.Security.Principal.Windows.xml
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\FontAwesome.Sharp.dll

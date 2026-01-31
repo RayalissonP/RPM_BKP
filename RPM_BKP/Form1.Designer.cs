@@ -13,7 +13,7 @@
 
         private void InitializeComponent()
         {
-            this.btnSelecionarPasta = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtCaminhoPasta = new System.Windows.Forms.TextBox();
             this.chkExportarChromeEdge = new System.Windows.Forms.CheckBox();
             this.chkExportarFirefox = new System.Windows.Forms.CheckBox();
@@ -27,16 +27,10 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.NomePC_User = new System.Windows.Forms.CheckBox();
             this.exceptionJava = new System.Windows.Forms.CheckBox();
+            this.btnSelecTodos = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSelecionarPasta = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnSelecionarPasta
-            // 
-            this.btnSelecionarPasta.Location = new System.Drawing.Point(99, 20);
-            this.btnSelecionarPasta.Name = "btnSelecionarPasta";
-            this.btnSelecionarPasta.Size = new System.Drawing.Size(180, 23);
-            this.btnSelecionarPasta.TabIndex = 0;
-            this.btnSelecionarPasta.Text = "Selecionar a Pasta de Destino";
-            this.btnSelecionarPasta.Click += new System.EventHandler(this.btnSelecionarPasta_Click);
             // 
             // txtCaminhoPasta
             // 
@@ -111,24 +105,24 @@
             // 
             // btnExecutar
             // 
-            this.btnExecutar.Location = new System.Drawing.Point(111, 310);
+            this.btnExecutar.Location = new System.Drawing.Point(110, 354);
             this.btnExecutar.Name = "btnExecutar";
-            this.btnExecutar.Size = new System.Drawing.Size(149, 25);
+            this.btnExecutar.Size = new System.Drawing.Size(149, 29);
             this.btnExecutar.TabIndex = 9;
             this.btnExecutar.Text = "Executar";
             this.btnExecutar.Click += new System.EventHandler(this.btnExecutar_Click);
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(27, 347);
+            this.progressBar.Location = new System.Drawing.Point(25, 389);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(329, 23);
+            this.progressBar.Size = new System.Drawing.Size(331, 23);
             this.progressBar.TabIndex = 10;
             this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(26, 373);
+            this.lblStatus.Location = new System.Drawing.Point(24, 415);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(330, 13);
             this.lblStatus.TabIndex = 11;
@@ -151,12 +145,44 @@
             this.exceptionJava.Text = "Salvar Sites Exceções Java";
             this.exceptionJava.CheckedChanged += new System.EventHandler(this.exceptionJava_CheckedChanged);
             // 
+            // btnSelecTodos
+            // 
+            this.btnSelecTodos.Location = new System.Drawing.Point(37, 316);
+            this.btnSelecTodos.Name = "btnSelecTodos";
+            this.btnSelecTodos.Size = new System.Drawing.Size(144, 23);
+            this.btnSelecTodos.TabIndex = 14;
+            this.btnSelecTodos.Text = "Selecionar Todos";
+            this.btnSelecTodos.UseVisualStyleBackColor = true;
+            this.btnSelecTodos.Click += new System.EventHandler(this.btnSelecTodos_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(210, 316);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(144, 23);
+            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnSelecionarPasta
+            // 
+            this.btnSelecionarPasta.Location = new System.Drawing.Point(98, 12);
+            this.btnSelecionarPasta.Name = "btnSelecionarPasta";
+            this.btnSelecionarPasta.Size = new System.Drawing.Size(178, 31);
+            this.btnSelecionarPasta.TabIndex = 17;
+            this.btnSelecionarPasta.Text = "Selecionar a Pasta de Destino";
+            this.btnSelecionarPasta.UseVisualStyleBackColor = true;
+            this.btnSelecionarPasta.Click += new System.EventHandler(this.btnSelecionarPasta_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(384, 400);
+            this.ClientSize = new System.Drawing.Size(384, 446);
+            this.Controls.Add(this.btnSelecionarPasta);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnSelecTodos);
             this.Controls.Add(this.exceptionJava);
             this.Controls.Add(this.NomePC_User);
-            this.Controls.Add(this.btnSelecionarPasta);
             this.Controls.Add(this.txtCaminhoPasta);
             this.Controls.Add(this.chkExportarChromeEdge);
             this.Controls.Add(this.chkExportarFirefox);
@@ -169,16 +195,17 @@
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.lblStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RPM BKP";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        private System.Windows.Forms.Button btnSelecionarPasta;
         private System.Windows.Forms.TextBox txtCaminhoPasta;
         private System.Windows.Forms.CheckBox chkExportarChromeEdge;
         private System.Windows.Forms.CheckBox chkExportarFirefox;
@@ -192,5 +219,8 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.CheckBox NomePC_User;
         private System.Windows.Forms.CheckBox exceptionJava;
+        private System.Windows.Forms.Button btnSelecTodos;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnSelecionarPasta;
     }
 }

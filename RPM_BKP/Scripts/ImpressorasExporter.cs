@@ -9,7 +9,7 @@ namespace RPM_BKP.Scripts
     {
         public static void Exportar(string pastaDestino)
         {
-            string arquivoSaida = Path.Combine(pastaDestino, "ImpressorasInstaladas.html");
+            string arquivoSaida = Path.Combine(pastaDestino, "Impressoras_Instaladas.html");
 
             StringBuilder html = new StringBuilder();
 
