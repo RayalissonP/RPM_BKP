@@ -1,5 +1,7 @@
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\e_sqlite3.dll
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\RPM_BKP.exe.config
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\RPM_BKP.exe.manifest
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\RPM_BKP.application
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\RPM_BKP.exe
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\RPM_BKP.pdb
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\bin\x64\Debug\FontAwesome.Sharp.dll
@@ -30,6 +32,8 @@ C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.Fo
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.Properties.Resources.resources
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.csproj.GenerateResource.cache
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.csproj.CoreCompileInputs.cache
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.exe.manifest
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.application
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.csproj.Up2Date
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.exe
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Debug\RPM_BKP.pdb

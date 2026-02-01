@@ -1,9 +1,11 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace RPM_BKP.Scripts
 {
@@ -50,21 +52,27 @@ namespace RPM_BKP.Scripts
 
             html.AppendLine("<table>");
             html.AppendLine("<tr>");
-            html.AppendLine("<th>Subject</th>");
-            html.AppendLine("<th>Issuer</th>");
-            html.AppendLine("<th>Thumbprint</th>");
+            html.AppendLine("<th>Nome do Certificado</th>");
             html.AppendLine("<th>Válido de</th>");
             html.AppendLine("<th>Válido até</th>");
+            html.AppendLine("<th>Chave exportável</th>");
             html.AppendLine("</tr>");
 
-            foreach (X509Certificate2 cert in store.Certificates)
+            foreach (X509Certificate2 cert in store.Certificates
+            .Cast<X509Certificate2>()
+            .OrderBy(c => c.NotAfter))
             {
+                string nomeCertificado = string.IsNullOrWhiteSpace(cert.FriendlyName)
+                    ? cert.Subject
+                    : cert.FriendlyName;
+
+                string chaveExportavel = VerificarChaveExportavel(cert);
+
                 html.AppendLine("<tr>");
-                html.AppendLine($"<td>{cert.Subject}</td>");
-                html.AppendLine($"<td>{cert.Issuer}</td>");
-                html.AppendLine($"<td>{cert.Thumbprint}</td>");
+                html.AppendLine($"<td>{nomeCertificado}</td>");
                 html.AppendLine($"<td>{cert.NotBefore:dd/MM/yyyy}</td>");
                 html.AppendLine($"<td>{cert.NotAfter:dd/MM/yyyy}</td>");
+                html.AppendLine($"<td>{chaveExportavel}</td>");
                 html.AppendLine("</tr>");
             }
 
@@ -76,12 +84,33 @@ namespace RPM_BKP.Scripts
 
             File.WriteAllText(arquivoSaida, html.ToString(), Encoding.UTF8);
 
-            // 🔥 ABRIR O HTML AUTOMATICAMENTE
             Process.Start(new ProcessStartInfo
             {
                 FileName = arquivoSaida,
                 UseShellExecute = true
             });
+        }
+
+        private static string VerificarChaveExportavel(X509Certificate2 cert)
+        {
+            try
+            {
+                if (!cert.HasPrivateKey)
+                    return "Não";
+
+                // CSP (mais comum em certificados antigos)
+                if (cert.PrivateKey is RSACryptoServiceProvider rsaCsp)
+                {
+                    return rsaCsp.CspKeyContainerInfo.Exportable ? "Sim" : "Não";
+                }
+
+                // CNG / outros provedores
+                return "Não identificável";
+            }
+            catch
+            {
+                return "Não identificável";
+            }
         }
 
         private static void MostrarAvisoSemCertificados()

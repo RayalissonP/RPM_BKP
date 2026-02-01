@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RPM_BKP.exe.manifest" size="13679">
+    <dependentAssembly dependencyType="install" codebase="RPM_BKP.exe.manifest" size="14169">
       <assemblyIdentity name="RPM_BKP.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Az1LVJDNscbca3bgASntwVorrPkZhMctQeWWo5UzLpw=</dsig:DigestValue>
+        <dsig:DigestValue>vsLvgszg/I7kCPxzADLh813VskeaJ8md7Gy3xI2jRY8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
