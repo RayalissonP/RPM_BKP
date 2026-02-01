@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPM_BKP.exe" size="568856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPM_BKP.exe" size="571928">
       <assemblyIdentity name="RPM_BKP" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QK+2XQ79xr6qwIq188iwAGQbcCuCHThJNNZ3ie3UHKs=</dsig:DigestValue>
+        <dsig:DigestValue>yr2sAk6r0MTnkzYQ4rtQ/S3EkkYkAMOWcPKUuXLe5Tw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

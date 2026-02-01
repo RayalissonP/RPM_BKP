@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
               "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
               "RelativeToolTip": "RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T03:19:07.185Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "RPM_BKP\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAewBcAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T02:08:38.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T02:08:38.065Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs [Design]",
               "RelativeToolTip": "RPM_BKP\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T02:06:10.658Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-27T02:06:10.658Z"
             }
           ]
         }

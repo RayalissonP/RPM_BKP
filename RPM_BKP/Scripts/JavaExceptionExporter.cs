@@ -8,28 +8,23 @@ namespace RPM_BKP.Scripts
     {
         public static void Exportar(string pastaDestino)
         {
-            // Pasta de origem do Java
+            
             string pastaOrigem = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
                 @"AppData\LocalLow\Sun\Java\Deployment\security"
             );
 
-            // Arquivo exception.sites dentro da pasta de origem
             string caminhoOrigem = Path.Combine(pastaOrigem, "exception.sites");
 
-            // Só continua se o arquivo existir
             if (!System.IO.File.Exists(caminhoOrigem))
                 return;
 
-            // Pasta destino
             string pastaJava = Path.Combine(pastaDestino, "Sites de exceção Java");
             Directory.CreateDirectory(pastaJava);
 
-            // Copiar arquivo
             string caminhoDestino = Path.Combine(pastaJava, "exception.sites");
             System.IO.File.Copy(caminhoOrigem, caminhoDestino, true);
 
-            // Criar atalho para a pasta de origem
             CriarAtalhoParaPastaOrigem(pastaOrigem, pastaJava);
         }
 

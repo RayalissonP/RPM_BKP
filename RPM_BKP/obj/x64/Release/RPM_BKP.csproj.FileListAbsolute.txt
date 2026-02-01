@@ -38,3 +38,5 @@ C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\RPM_BKP.
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\RPM_BKP.application
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\RPM_BKP.csproj.Up2Date
 C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\RPM_BKP.exe.config
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\Rayalisson Pastor\source\repos\RPM_BKP\RPM_BKP\obj\x64\Release\RPM_BKP.csproj.ResolveComReference.cache
