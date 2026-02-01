@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|c:\\users\\rayalisson pastor\\source\\repos\\rpm_bkp\\rpm_bkp\\scripts\\certificadosexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\scripts\\certificadosexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|c:\\users\\rayalisson pastor\\source\\repos\\rpm_bkp\\rpm_bkp\\scripts\\javaexceptionexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\scripts\\javaexceptionexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|c:\\users\\rayalisson pastor\\source\\repos\\rpm_bkp\\rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAC43800-DA68-4046-8E23-D31746579CA2}|RPM_BKP\\RPM_BKP.csproj|solutionrelative:rpm_bkp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CertificadosExporter.cs",
-              "DocumentMoniker": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\CertificadosExporter.cs",
-              "RelativeDocumentMoniker": "RPM_BKP\\Scripts\\CertificadosExporter.cs",
-              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\CertificadosExporter.cs",
-              "RelativeToolTip": "RPM_BKP\\Scripts\\CertificadosExporter.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAgwE0AAAAAAAAAAAAAAA==",
+              "Title": "JavaExceptionExporter.cs",
+              "DocumentMoniker": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
+              "RelativeDocumentMoniker": "RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
+              "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
+              "RelativeToolTip": "RPM_BKP\\Scripts\\JavaExceptionExporter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T03:04:11.838Z",
+              "WhenOpened": "2026-02-01T03:19:07.185Z",
               "EditorCaption": ""
             },
             {
@@ -63,7 +63,8 @@
               "ToolTip": "C:\\Users\\Rayalisson Pastor\\source\\repos\\RPM_BKP\\RPM_BKP\\Form1.cs [Design]",
               "RelativeToolTip": "RPM_BKP\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T02:06:10.658Z"
+              "WhenOpened": "2026-01-27T02:06:10.658Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
