@@ -64,7 +64,7 @@
             this.chkGerarListaProgramas.Name = "chkGerarListaProgramas";
             this.chkGerarListaProgramas.Size = new System.Drawing.Size(168, 24);
             this.chkGerarListaProgramas.TabIndex = 4;
-            this.chkGerarListaProgramas.Text = "Gerar lista de Programas";
+            this.chkGerarListaProgramas.Text = "Gerar Lista de Programas";
             this.chkGerarListaProgramas.CheckedChanged += new System.EventHandler(this.chkGerarListaProgramas_CheckedChanged);
             // 
             // chkGerarListaImpressoras
@@ -73,7 +73,7 @@
             this.chkGerarListaImpressoras.Name = "chkGerarListaImpressoras";
             this.chkGerarListaImpressoras.Size = new System.Drawing.Size(168, 24);
             this.chkGerarListaImpressoras.TabIndex = 5;
-            this.chkGerarListaImpressoras.Text = "Gerar lista de Impressoras";
+            this.chkGerarListaImpressoras.Text = "Gerar Lista de Impressoras";
             this.chkGerarListaImpressoras.CheckedChanged += new System.EventHandler(this.chkGerarListaImpressoras_CheckedChanged);
             // 
             // chkListarCertificados
